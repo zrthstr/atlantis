@@ -181,10 +181,10 @@ jobs:
       if: env.PUSH == 'true' && github.event_name != 'pull_request'
       run: |
         # Sign dev tags, version tags, and latest tags
-        echo "${TAGS}" | xargs -I {} cosign sign \
+        echo "${TAGS}" | xargs -I {} cosign sign \   
           --yes \
           -a actor=${{ github.actor}} \
-          -a ref_name=${{ github.ref_name}} \
+          -a ref_name=${{ github.ref_name}} \     hmmmmmmm???? TBDTBDTBD
           -a ref=${{ github.sha }} \
           {}@${DIGEST}
       env:
